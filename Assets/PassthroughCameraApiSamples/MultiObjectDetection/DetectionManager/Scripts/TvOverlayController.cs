@@ -5,41 +5,68 @@ using UnityEngine.XR;
 
 namespace PassthroughCameraSamples.MultiObjectDetection
 {
+    /// <summary>
+    /// Finds the detected advertisement screen (YOLO class "tvmonitor") in the boxes drawn by
+    /// <see cref="SentisInferenceUiManager"/> and places a blur overlay exactly on top of it.
+    /// Once the screen pose is stable, the overlay is locked so it does not jitter.
+    /// Optionally shows a navigation arrow on the overlay that can be toggled with the A button.
+    /// </summary>
     public class TvOverlayController : MonoBehaviour
     {
         [Header("Source")]
+        [Tooltip("Inference UI manager that provides the detected bounding boxes.")]
         [SerializeField] private SentisInferenceUiManager m_uiInference;
+        [Tooltip("YOLO class name to track. Advertisement screens are detected as 'tvmonitor'.")]
         [SerializeField] private string m_targetClassName = "tvmonitor";
+        [Tooltip("Number of valid frames needed before the overlay is locked in place.")]
         [SerializeField, Min(1)] private int m_framesToLock = 1;
+        [Tooltip("Boxes not updated for longer than this (seconds) are ignored as stale.")]
         [SerializeField, Min(0.01f)] private float m_maxBoxAgeSeconds = 0.25f;
+        [Tooltip("If enabled, the overlay stays fixed once a stable screen pose was found.")]
         [SerializeField] private bool m_lockAfterDetection = true;
 
         [Header("Blur Overlay")]
+        [Tooltip("Prefab placed over the detected advertisement (blur panel).")]
         [SerializeField] private GameObject m_blurPrefab;
+        [Tooltip("Optional parent for the overlay. Defaults to the inference UI's content parent.")]
         [SerializeField] private Transform m_spawnParent;
+        [Tooltip("Overlay width relative to the detected box (1 = same width).")]
         [SerializeField] private float m_widthMultiplier = 1.0f;
+        [Tooltip("Overlay height relative to the detected box (1 = same height).")]
         [SerializeField] private float m_heightMultiplier = 1.0f;
+        [Tooltip("Moves the overlay slightly toward the viewer so it renders in front of the box.")]
         [SerializeField] private float m_offsetTowardCamera = 0.01f;
+        [Tooltip("Extra rotation applied to the overlay, in degrees.")]
         [SerializeField] private Vector3 m_rotationOffsetEuler = Vector3.zero;
+        [Tooltip("Scale factor, only used when the overlay prefab has no RectTransform.")]
         [SerializeField] private Vector3 m_worldScaleMultiplier = Vector3.one;
 
         [Header("Dummy Directions")]
+        [Tooltip("Optional navigation arrow shown on top of the overlay.")]
         [SerializeField] private GameObject m_directionsPrefab;
+        [Tooltip("Position of the arrow relative to the overlay.")]
         [SerializeField] private Vector3 m_directionsLocalOffset = new Vector3(0f, 0.15f, 0f);
+        [Tooltip("Allow showing/hiding the arrow with the controller's primary button (A).")]
         [SerializeField] private bool m_enableDirectionsToggle = true;
+        [Tooltip("Controller whose primary button toggles the arrow.")]
         [SerializeField] private XRNode m_controllerNode = XRNode.RightHand;
 
+        // Cached XR input devices for the configured controller.
         private readonly List<InputDevice> m_devices = new List<InputDevice>();
 
+        // Runtime instances created from the prefabs above.
         private GameObject m_overlayInstance;
         private RectTransform m_overlayRect;
         private GameObject m_directionsInstance;
         private Vector3 m_originalLocalScale = Vector3.one;
 
+        // Lock state: frames with a valid box, whether the overlay is locked,
+        // and last button state (to react only to the press, not while held).
         private int m_validFrames;
         private bool m_locked;
         private bool m_lastPrimaryPressed;
 
+        // Warn early if required references are missing in the Inspector.
         private void Start()
         {
             if (m_uiInference == null)
@@ -49,11 +76,13 @@ namespace PassthroughCameraSamples.MultiObjectDetection
                 Debug.LogError("TvOverlayController: Blur Prefab is missing.");
         }
 
+        // Collect controller devices when the component becomes active.
         private void OnEnable()
         {
             RefreshDevices();
         }
 
+        // Every frame: follow the detected screen and handle the arrow toggle.
         private void Update()
         {
             if (m_uiInference != null && m_blurPrefab != null)
@@ -67,6 +96,10 @@ namespace PassthroughCameraSamples.MultiObjectDetection
             }
         }
 
+        /// <summary>
+        /// Moves the overlay onto the best detected screen and locks it once the pose is stable.
+        /// While locked, the overlay only moves again when the detector reports a new stable pose.
+        /// </summary>
         private void TrackTvAndUpdateOverlay()
         {
             SentisInferenceUiManager.BoundingBoxData bestTvBox = FindBestTvBox();
@@ -106,6 +139,9 @@ namespace PassthroughCameraSamples.MultiObjectDetection
             }
         }
 
+        /// <summary>
+        /// Returns the largest active, recently updated box of the target class, or null if none.
+        /// </summary>
         private SentisInferenceUiManager.BoundingBoxData FindBestTvBox()
         {
             if (m_uiInference == null || m_uiInference.m_boxDrawn == null || m_uiInference.m_boxDrawn.Count == 0)
@@ -132,6 +168,7 @@ namespace PassthroughCameraSamples.MultiObjectDetection
                 Vector2 size = box.BoxRectTransform.sizeDelta;
                 float area = Mathf.Abs(size.x * size.y);
 
+                // Prefer the largest box - usually the closest / most relevant screen.
                 if (area > bestArea)
                 {
                     bestArea = area;
@@ -142,6 +179,9 @@ namespace PassthroughCameraSamples.MultiObjectDetection
             return best;
         }
 
+        /// <summary>
+        /// Makes class names comparable: trimmed, lower case, spaces replaced by underscores.
+        /// </summary>
         private static string NormalizeClassName(string value)
         {
             if (string.IsNullOrWhiteSpace(value))
@@ -150,6 +190,9 @@ namespace PassthroughCameraSamples.MultiObjectDetection
             return value.Trim().Replace(" ", "_").ToLowerInvariant();
         }
 
+        /// <summary>
+        /// Creates the blur overlay (and the optional arrow) the first time a screen is found.
+        /// </summary>
         private void EnsureOverlayExists()
         {
             if (m_overlayInstance != null)
@@ -176,6 +219,10 @@ namespace PassthroughCameraSamples.MultiObjectDetection
             }
         }
 
+        /// <summary>
+        /// Copies position, rotation and size of the detected box onto the overlay.
+        /// Works in local UI space when both share a parent, otherwise via world space.
+        /// </summary>
         private void ApplyPoseAndSize(RectTransform sourceBox)
         {
             if (sourceBox == null || m_overlayInstance == null)
@@ -185,6 +232,7 @@ namespace PassthroughCameraSamples.MultiObjectDetection
             Quaternion rotationOffset = Quaternion.Euler(m_rotationOffsetEuler);
             bool sameParent = overlayTransform.parent == sourceBox.parent;
 
+            // Same parent: copy the local layout directly.
             if (m_overlayRect != null && sameParent)
             {
                 Vector3 localOffset = sourceBox.localRotation * Vector3.forward * m_offsetTowardCamera;
@@ -205,6 +253,7 @@ namespace PassthroughCameraSamples.MultiObjectDetection
             }
             else
             {
+                // Different parent: place the overlay using world coordinates.
                 Vector3 worldPosition = sourceBox.position - sourceBox.forward * m_offsetTowardCamera;
                 Quaternion worldRotation = sourceBox.rotation * rotationOffset;
 
@@ -235,6 +284,9 @@ namespace PassthroughCameraSamples.MultiObjectDetection
             }
         }
 
+        /// <summary>
+        /// Shows/hides the navigation arrow when the controller's primary button is pressed.
+        /// </summary>
         private void HandleDirectionsToggle()
         {
             if (m_directionsInstance == null || m_overlayInstance == null)
@@ -258,6 +310,7 @@ namespace PassthroughCameraSamples.MultiObjectDetection
                 }
             }
 
+            // Toggle only on the press itself, not on every frame while the button is held.
             if (primaryPressed && !m_lastPrimaryPressed)
             {
                 m_directionsInstance.SetActive(!m_directionsInstance.activeSelf);
@@ -266,12 +319,18 @@ namespace PassthroughCameraSamples.MultiObjectDetection
             m_lastPrimaryPressed = primaryPressed;
         }
 
+        /// <summary>
+        /// Re-reads the input devices of the configured controller.
+        /// </summary>
         private void RefreshDevices()
         {
             m_devices.Clear();
             InputDevices.GetDevicesAtXRNode(m_controllerNode, m_devices);
         }
 
+        /// <summary>
+        /// True if at least one cached controller device is still connected.
+        /// </summary>
         private bool HasValidDevice()
         {
             for (int i = 0; i < m_devices.Count; i++)
@@ -283,6 +342,9 @@ namespace PassthroughCameraSamples.MultiObjectDetection
             return false;
         }
 
+        /// <summary>
+        /// Removes the overlay and unlocks, so the next detected screen gets a fresh overlay.
+        /// </summary>
         public void ResetOverlay()
         {
             m_locked = false;
@@ -296,12 +358,18 @@ namespace PassthroughCameraSamples.MultiObjectDetection
             m_directionsInstance = null;
         }
 
+        /// <summary>
+        /// Unlocks the overlay but keeps it visible until a new stable pose is found.
+        /// </summary>
         public void UnlockWithoutDestroyingOverlay()
         {
             m_locked = false;
             m_validFrames = 0;
         }
 
+        /// <summary>
+        /// Shows/hides the navigation arrow (e.g. from a UI button or another script).
+        /// </summary>
         public void ToggleDirectionsFromCode()
         {
             if (m_directionsInstance != null)

@@ -1,32 +1,48 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Switches what is shown over a detected advertisement with the Quest controller buttons:
+/// A = left, B = right, X = straight ahead, Y = U-turn. Depending on <see cref="showVideo"/>
+/// either the relaxing video or a direction arrow replaces the blur.
+/// Pressing the same button again hides it and shows the blur again.
+/// </summary>
 public class CanvasToggler : MonoBehaviour
 {
     [Header("Object With Image Component")]
+    [Tooltip("Object with an Image component that displays the direction arrow.")]
     [SerializeField] private GameObject ObjectsToEnable;
+    [Tooltip("Object that plays the replacement video (shown instead of the arrow when Show Video is on).")]
     [SerializeField] private GameObject videoObject;
+    [Tooltip("Blur image that covers the advertisement while nothing else is shown.")]
     [SerializeField] private Image blurImage;
+    [Tooltip("Parent of all overlay objects; hidden on start when Hide All Objects is on.")]
     [SerializeField] private GameObject parentGameobject;
 
     [Header("Direction Sprites")]
+    [Tooltip("Arrow sprites for the four directions.")]
     [SerializeField] private Sprite leftSprite;
     [SerializeField] private Sprite rightSprite;
     [SerializeField] private Sprite upSprite;
     [SerializeField] private Sprite uTurnSprite;
 
     [Header("Meta Quest Buttons")]
+    [Tooltip("Controller buttons that select each direction.")]
     [SerializeField] private OVRInput.Button leftButton = OVRInput.Button.One;     // A
     [SerializeField] private OVRInput.Button rightButton = OVRInput.Button.Two;    // B
     [SerializeField] private OVRInput.Button upButton = OVRInput.Button.Three;     // X
     [SerializeField] private OVRInput.Button uTurnButton = OVRInput.Button.Four;   // Y
 
+    // Image component of ObjectsToEnable, cached in Awake.
     private Image directionImage;
     private Direction currentDirection = Direction.None;
+    [Tooltip("On: a button press shows the video. Off: it shows the direction arrow.")]
     public bool showVideo = true; // Public variable to control whether to show the video object
+    [Tooltip("If on, the whole overlay (parentGameobject) is hidden at start.")]
     public bool HideAllObects = false; // Public variable to control whether to hide all objects
 
 
+    // Currently selected direction (None = only the blur is visible).
     private enum Direction
     {
         None,
@@ -36,6 +52,7 @@ public class CanvasToggler : MonoBehaviour
         UTurn
     }
 
+    // Validate references, cache the arrow image and start with only the blur visible.
     void Awake()
     {
         if (ObjectsToEnable == null)
@@ -73,6 +90,7 @@ public class CanvasToggler : MonoBehaviour
         }
     }
 
+    // Check the four controller buttons every frame (GetDown = only once per press).
     void Update()
     {
         if (OVRInput.GetDown(leftButton))
@@ -96,6 +114,10 @@ public class CanvasToggler : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Shows the video or the arrow for the given direction and hides the blur.
+    /// If that direction is already active, everything is hidden again.
+    /// </summary>
     private void ToggleDirection(Direction direction, Sprite sprite)
     {
         if (directionImage == null || ObjectsToEnable == null)
@@ -133,6 +155,9 @@ public class CanvasToggler : MonoBehaviour
             blurImage.enabled = false;
     }
 
+    /// <summary>
+    /// Hides arrow and video and shows the blur again.
+    /// </summary>
     private void HideDirection()
     {
         currentDirection = Direction.None;

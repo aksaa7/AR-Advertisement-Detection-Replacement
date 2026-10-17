@@ -1,0 +1,16 @@
+Measure,Comparison,Test,p (raw),p (Holm),Significance
+SUS,A vs B,Wilcoxon signed-rank,0.00098,0.00295,**
+SUS,A vs C,Wilcoxon signed-rank,0.01039,0.02077,*
+SUS,B vs C,Wilcoxon signed-rank,0.25137,0.25137,ns
+TLX,A vs B,Wilcoxon signed-rank,0.00045,0.0007,***
+TLX,A vs C,Wilcoxon signed-rank,0.00023,0.0007,***
+TLX,B vs C,Wilcoxon signed-rank,0.00028,0.0007,***
+Trust,A vs B,paired t-test,0.03859,0.11576,ns
+Trust,A vs C,paired t-test,0.24604,0.48998,ns
+Trust,B vs C,paired t-test,0.24499,0.48998,ns
+ARI,A vs B,Wilcoxon signed-rank,2e-05,7e-05,***
+ARI,A vs C,Wilcoxon signed-rank,0.00045,0.00091,***
+ARI,B vs C,Wilcoxon signed-rank,0.00401,0.00401,**
+ErrorRate,A vs B,Wilcoxon signed-rank,0.00158,0.00474,**
+ErrorRate,A vs C,Wilcoxon signed-rank,0.00193,0.00474,**
+ErrorRate,B vs C,Wilcoxon signed-rank,0.02367,0.02367,*

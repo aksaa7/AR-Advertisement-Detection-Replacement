@@ -1,0 +1,52 @@
+survey,participant,question,item,raw,cleaned,change
+A,2,G03Q03[SQ004],[The developers are trustworthy.],,5.0,missing answer filled in
+A,2,G03Q03[SQ016],[It is difficult to identify what the system will do next.],,3.0,missing answer filled in
+A,2,G05Q05[SQ004],[ The topic of the activity made me want to find out more about it],,6.0,missing answer filled in
+A,7,G03Q03[SQ008],[I can rely on the system.],,4.0,missing answer filled in
+A,9,G03Q03[SQ008],[I can rely on the system.],,4.0,missing answer filled in
+A,10,G05Q05[SQ022],[I often felt suspense by the activity],,3.0,missing answer filled in
+A,10,G05Q05[SQ030],[Time went by quickly during the activity],,4.0,missing answer filled in
+A,11,G03Q03[SQ003],[I already know similar systems.],,3.0,missing answer filled in
+A,11,G05Q05[SQ011],[The time I spent for the activity was more than I expected],,6.0,missing answer filled in
+A,11,G05Q05[SQ025],[I often forgot the passage of time during the activity],,3.0,missing answer filled in
+A,12,G03Q03[SQ001],[The system is capable of interpreting situations correctly.],,5.0,missing answer filled in
+A,12,G03Q03[SQ009],[The system is capable of taking over complicated tasks.],,4.0,missing answer filled in
+A,12,G03Q03[SQ008],[I can rely on the system.],,5.0,missing answer filled in
+A,13,G05Q05[SQ032],"[During the activity, I felt that I was the protagonist]",,3.0,missing answer filled in
+A,14,G05Q05[SQ009],[I wanted to spend time to participate in the activity ],,5.0,missing answer filled in
+B,1,G02Q02[SQ006],"[How frustrated, stressed, or annoyed did you feel during the task?]",2.0,9.0,answer changed
+B,1,G05Q05[SQ008],[ I wanted to spend the time to complete the activity successfully ],,6.0,missing answer filled in
+B,2,G02Q02[SQ006],"[How frustrated, stressed, or annoyed did you feel during the task?]",0.0,10.0,answer changed
+B,5,G03Q03[SQ006],[The system works reliably.],,5.0,missing answer filled in
+B,5,G03Q03[SQ007],[The system reacts unpredictably.],,2.0,missing answer filled in
+B,5,G03Q03[SQ014],[The developers take my well-being seriously.],,5.0,missing answer filled in
+B,5,G03Q03[SQ013],[I trust the system. ],,5.0,missing answer filled in
+B,5,G03Q03[SQ012],[A system malfunction is likely.],,1.0,missing answer filled in
+B,5,G03Q03[SQ011],[I was able to understand why things happened.],,4.0,missing answer filled in
+B,5,G03Q03[SQ010],[I rather trust a system than I mistrust it.],,4.0,missing answer filled in
+B,5,G05Q05[SQ011],[The time I spent for the activity was more than I expected],,4.0,missing answer filled in
+B,5,G05Q05[SQ032],"[During the activity, I felt that I was the protagonist]",,6.0,missing answer filled in
+B,11,G05Q05[SQ010],[ I wanted to spend time collecting the information provided],,5.0,missing answer filled in
+B,12,G05Q05[SQ030],[Time went by quickly during the activity],,6.0,missing answer filled in
+B,12,G05Q05[SQ031],[The activity felt so authentic that it made me think that the virtual objects existed for real],,6.0,missing answer filled in
+B,13,G05Q05[SQ011],[The time I spent for the activity was more than I expected],,6.0,missing answer filled in
+B,15,G05Q05[SQ011],[The time I spent for the activity was more than I expected],,6.0,missing answer filled in
+C,1,G05Q05[SQ010],[ I wanted to spend time collecting the information provided],,7.0,missing answer filled in
+C,1,G05Q05[SQ014],[I found the AR application confusing],6.0,2.0,answer changed
+C,1,G05Q05[SQ021],[I was often excited since I felt as being part of the activity],,6.0,missing answer filled in
+C,2,G03Q03[SQ002],[The system state was always clear to me.],,4.0,missing answer filled in
+C,2,G03Q03[SQ005],[One should be careful with unfamiliar automated systems.],,3.0,missing answer filled in
+C,2,G03Q03[SQ010],[I rather trust a system than I mistrust it.],,3.0,missing answer filled in
+C,2,G05Q05[SQ005],[The space in which the activity took place was interesting],,6.0,missing answer filled in
+C,2,G05Q05[SQ009],[I wanted to spend time to participate in the activity ],,6.0,missing answer filled in
+C,2,G05Q05[SQ014],[I found the AR application confusing],,2.0,missing answer filled in
+C,2,G05Q05[SQ020],[I was curious about how the activity would progress],,6.0,missing answer filled in
+C,5,G03Q03[SQ006],[The system works reliably.],,4.0,missing answer filled in
+C,5,G03Q03[SQ010],[I rather trust a system than I mistrust it.],,3.0,missing answer filled in
+C,8,G05Q05[SQ013],[It was easy for me to use the AR application],,7.0,missing answer filled in
+C,11,G00Q01[SQ006],[ I thought there was too much inconsistency in this system],,2.0,missing answer filled in
+C,11,G00Q01[SQ008],[ I found the system very cumbersome to use],,2.0,missing answer filled in
+C,12,G05Q05[SQ011],[The time I spent for the activity was more than I expected],,2.0,missing answer filled in
+C,13,G05Q05[SQ013],[It was easy for me to use the AR application],,7.0,missing answer filled in
+C,15,G03Q03[SQ009],[The system is capable of taking over complicated tasks.],,3.0,missing answer filled in
+C,18,G05Q05[SQ042],[All of my senses were totally concentrated on the activity],,6.0,missing answer filled in

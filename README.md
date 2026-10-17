@@ -27,6 +27,22 @@ Based on Meta's [Unity-PassthroughCameraApiSamples](https://github.com/oculus-sa
 
 ---
 
+## User study
+
+Within-subject study with **18 participants** comparing **A** original ads, **B** blurred ads and **C** ads replaced by a relaxing video. Measures: SUS, NASA-TLX, Trust in Automation, ARI immersion and the error rate on a distraction task.
+
+| Measure | A Original | B Blurred | C Replacement | p |
+|---|---|---|---|---|
+| SUS (usability) | 75.97 | 88.33 | 85.56 | 0.0002 (Friedman) |
+| NASA-TLX (workload) | 15.46 | 8.15 | 2.49 | < 0.0001 (Friedman) |
+| Trust in Automation | 3.87 | 4.07 | 3.97 | 0.0779 (RM-ANOVA) |
+| ARI (immersion) | 3.47 | 5.59 | 5.89 | < 0.0001 (Friedman) |
+| Error rate (%) | 25.94 | 21.00 | 17.86 | 0.0010 (Friedman) |
+
+Blurring and replacing ads both improved usability and immersion and reduced workload and errors; the relaxing video worked best. All LimeSurvey data, the analysis script (Friedman / RM-ANOVA with Holm-corrected post-hoc tests), plots and the final presentation are in **[`Study/`](Study/)**.
+
+---
+
 ## Requirements
 
 - **Unity 6** – `6000.0.69f1` (see `ProjectSettings/ProjectVersion.txt`)
@@ -65,6 +81,7 @@ AR-Advertisement-Detection-Replacement/
 ├── Packages/                             ← Unity package list (manifest.json)
 ├── ProjectSettings/                      ← Unity project settings, build scenes
 ├── Media/                                ← GIFs for the original sample README
+├── Study/                                ← ★ user study: data, analysis script, results, presentation
 ├── README.md                             ← this file
 └── README 2.md                           ← original Meta sample README
 ```

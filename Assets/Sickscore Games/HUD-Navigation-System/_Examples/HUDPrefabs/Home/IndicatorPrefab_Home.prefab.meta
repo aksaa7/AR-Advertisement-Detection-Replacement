@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: c99e811795d91e545aa0babab68a2d21
+timeCreated: 1529595758
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 103056
+  packageName: HUD Navigation System
+  packageVersion: 2.2.0
+  assetPath: Assets/Sickscore Games/HUD-Navigation-System/_Examples/HUDPrefabs/Home/IndicatorPrefab_Home.prefab
+  uploadId: 382610

@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: d58a25cdfefd50549bb24c60649b7479
+timeCreated: 1529404303
+licenseType: Store
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 103056
+  packageName: HUD Navigation System
+  packageVersion: 2.2.0
+  assetPath: Assets/Sickscore Games/HUD-Navigation-System/Scripts/Prefabs/HNSPrefab.cs
+  uploadId: 382610

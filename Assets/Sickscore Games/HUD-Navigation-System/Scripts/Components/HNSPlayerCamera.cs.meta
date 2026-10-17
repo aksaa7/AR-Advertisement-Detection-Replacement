@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 15b600b67bb20cb47946eabe54f0ad44
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 103056
+  packageName: HUD Navigation System
+  packageVersion: 2.2.0
+  assetPath: Assets/Sickscore Games/HUD-Navigation-System/Scripts/Components/HNSPlayerCamera.cs
+  uploadId: 382610

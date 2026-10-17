@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: c1d204e3674d92d46820131cf7f92657
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 103056
+  packageName: HUD Navigation System
+  packageVersion: 2.2.0
+  assetPath: Assets/Sickscore Games/HUD-Navigation-System/Scripts/Components/HNSPlayerController.cs
+  uploadId: 382610

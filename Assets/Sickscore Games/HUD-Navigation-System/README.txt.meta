@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 31ba980a7bf0b7943912bb8196e3afa9
+timeCreated: 1498053337
+licenseType: Store
+TextScriptImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 103056
+  packageName: HUD Navigation System
+  packageVersion: 2.2.0
+  assetPath: Assets/Sickscore Games/HUD-Navigation-System/README.txt
+  uploadId: 382610

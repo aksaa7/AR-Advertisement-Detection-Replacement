@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: d04e4256c86dfc4439da3d1b4407458e
+timeCreated: 1529581011
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 103056
+  packageName: HUD Navigation System
+  packageVersion: 2.2.0
+  assetPath: Assets/Sickscore Games/HUD-Navigation-System/Resources/Prefabs/HUDPrefabs/CompassBarPrefab_Default.prefab
+  uploadId: 382610

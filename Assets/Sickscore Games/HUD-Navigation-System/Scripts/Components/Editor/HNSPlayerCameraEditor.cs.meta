@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 6a330ab002d9f8c479c1e062960d44a9
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 103056
+  packageName: HUD Navigation System
+  packageVersion: 2.2.0
+  assetPath: Assets/Sickscore Games/HUD-Navigation-System/Scripts/Components/Editor/HNSPlayerCameraEditor.cs
+  uploadId: 382610

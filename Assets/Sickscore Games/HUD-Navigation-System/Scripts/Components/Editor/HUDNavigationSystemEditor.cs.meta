@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 4c6cef3b06cb57546934765bd553aafe
+timeCreated: 1508829675
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 103056
+  packageName: HUD Navigation System
+  packageVersion: 2.2.0
+  assetPath: Assets/Sickscore Games/HUD-Navigation-System/Scripts/Components/Editor/HUDNavigationSystemEditor.cs
+  uploadId: 382610

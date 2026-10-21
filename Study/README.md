@@ -117,15 +117,15 @@ The data contain no names, e-mail addresses or IP addresses. Participants are id
 
 ## References
 
-- Brooke, J. (1996). SUS: A quick and dirty usability scale. In *Usability Evaluation in Industry*. Taylor & Francis.
-- Hart, S. G., & Staveland, L. E. (1988). Development of NASA-TLX (Task Load Index). *Advances in Psychology*, 52, 139–183.
-- Körber, M. (2019). Theoretical considerations and development of a questionnaire to measure trust in automation. *Proceedings of the 20th Congress of the International Ergonomics Association (IEA 2018)*.
-- Georgiou, Y., & Kyza, E. A. (2017). The development and validation of the ARI questionnaire. *International Journal of Human-Computer Studies*, 98, 24–37.
-- Mann, S., & Barfield, W. (2003). Introduction to mediated reality. *International Journal of Human-Computer Interaction*, 15(2), 205–208.
-- MIRAGE: Enabling Real-Time Automotive Mediated Reality. *CHI 2026*. doi:10.1145/3772318.3791195
-- Schwind, V., Resch, S., & Sehrt, J. (2023). The HCI User Studies Toolkit. *CHI EA '23*. doi:10.1145/3544549.3585890
-- Wang, C.-Y., Yeh, I.-H., & Liao, H.-Y. M. (2024). YOLOv9: Learning what you want to learn using programmable gradient information. *ECCV 2024*.
-- Meta Platforms Technologies. Unity-PassthroughCameraApiSamples (GitHub repository).
+- Brooke, J. (1996). SUS: A "quick and dirty" usability scale. In P. W. Jordan, B. Thomas, B. A. Weerdmeester, & I. L. McClelland (Eds.), *Usability Evaluation in Industry* (pp. 189–194). Taylor & Francis.
+- Georgiou, Y., & Kyza, E. A. (2017). The development and validation of the ARI questionnaire: An instrument for measuring immersion in location-based augmented reality settings. *International Journal of Human-Computer Studies*, 98, 24–37. https://doi.org/10.1016/j.ijhcs.2016.09.014
+- Hart, S. G., & Staveland, L. E. (1988). Development of NASA-TLX (Task Load Index): Results of empirical and theoretical research. *Advances in Psychology*, 52, 139–183.
+- Jansen, P., Britten, J., Colley, M., Sasalovici, M., & Rukzio, E. (2026). MIRAGE: Enabling real-time automotive mediated reality. In *Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems (CHI '26)*. ACM. https://doi.org/10.1145/3772318.3791195
+- Körber, M. (2018). Theoretical considerations and development of a questionnaire to measure trust in automation. In *Proceedings of the 20th Congress of the International Ergonomics Association (IEA 2018)* (pp. 13–30). Springer. https://doi.org/10.1007/978-3-319-96074-6_2
+- Mann, S., & Barfield, W. (2003). Introduction to mediated reality. *International Journal of Human-Computer Interaction*, 15(2), 205–208. https://doi.org/10.1207/S15327590IJHC1502_1
+- Schwind, V., Resch, S., & Sehrt, J. (2023). The HCI User Studies Toolkit: Supporting study designing and planning for undergraduates and novice researchers in human-computer interaction. In *Extended Abstracts of the 2023 CHI Conference on Human Factors in Computing Systems (CHI EA '23)*. ACM. https://doi.org/10.1145/3544549.3585890
+- Wang, C.-Y., Yeh, I.-H., & Liao, H.-Y. M. (2024). YOLOv9: Learning what you want to learn using programmable gradient information. In *Computer Vision – ECCV 2024*. Springer. https://doi.org/10.1007/978-3-031-72751-1_1
+- Meta Platforms Technologies. Unity-PassthroughCameraApiSamples [GitHub repository]. https://github.com/oculus-samples/Unity-PassthroughCameraApiSamples
 
 ## Reproduce the analysis
 

@@ -107,7 +107,7 @@ The raw exports in `data/raw/` are kept unchanged. The cleaned files in `data/cl
 
 - **Incomplete duplicates removed:** two participants restarted a survey (condition A participant 1, condition B participant 3, plus one empty demographics response). Only the complete response was kept.
 - **Missing participant IDs added:** two responses were submitted without an ID. Based on the session order, they belong to participant 2 (condition A) and participant 9 (condition C).
-- **Missing answers filled in:** 48 single answers that were empty in the export were filled in manually.
+- **Missing answers filled in:** 48 single answers had been skipped in LimeSurvey. The participants were asked afterwards and their answers were added.
 - **3 answers corrected after participant feedback:** NASA-TLX *frustration* in condition B for participant 1 (2 → 9) and participant 2 (0 → 10), and ARI item *"I found the AR application confusing"* in condition C for participant 1 (6 → 2).
 
 ## Privacy

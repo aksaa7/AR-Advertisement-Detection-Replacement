@@ -12,7 +12,7 @@ Final presentation: [`presentation/AR_Presentation_final.pdf`](presentation/AR_P
 | Participants | N = 18 (convenience sample) |
 | Conditions | **A** Original advertisements · **B** Blurred advertisements · **C** Advertisements replaced by a relaxing beach video |
 | Device | Meta Quest 3, passthrough mixed reality |
-| Task | Paper-based number-finding task done with the headset on (3 minutes per condition: mark all numbers between 30 and 70 in a grid, different grid per condition) while the advertisement is in view |
+| Task | Paper-based number-finding task done with the headset on (3 minutes per condition: mark all numbers between 30 and 70 in a grid, different grid per condition) while the advertisement is in view. Task sheets: [`materials/User_Task_Sheets.pdf`](materials/User_Task_Sheets.pdf) |
 | Survey tool | LimeSurvey |
 
 ### Measures (after each condition)
@@ -86,6 +86,7 @@ Study/
 │   ├── posthoc_tests.csv     ← pairwise tests (raw + Holm-corrected p-values)
 │   ├── data_cleaning_log.csv ← every difference between raw and cleaned data
 │   └── figures/              ← boxplots as used in the presentation
+├── materials/                ← task sheets of the number-finding task (3 grids)
 ├── questionnaires/           ← NASA-TLX questionnaire
 └── presentation/             ← final presentation (PDF + PowerPoint)
 ```
@@ -113,6 +114,18 @@ The raw exports in `data/raw/` are kept unchanged. The cleaned files in `data/cl
 ## Privacy
 
 The data contain no names, e-mail addresses or IP addresses. Participants are identified only by a number (1–18), and LimeSurvey's timestamps are anonymized (1980-01-01). Demographics are limited to age, gender and prior AR experience.
+
+## References
+
+- Brooke, J. (1996). SUS: A quick and dirty usability scale. In *Usability Evaluation in Industry*. Taylor & Francis.
+- Hart, S. G., & Staveland, L. E. (1988). Development of NASA-TLX (Task Load Index). *Advances in Psychology*, 52, 139–183.
+- Körber, M. (2019). Theoretical considerations and development of a questionnaire to measure trust in automation. *Proceedings of the 20th Congress of the International Ergonomics Association (IEA 2018)*.
+- Georgiou, Y., & Kyza, E. A. (2017). The development and validation of the ARI questionnaire. *International Journal of Human-Computer Studies*, 98, 24–37.
+- Mann, S., & Barfield, W. (2003). Introduction to mediated reality. *International Journal of Human-Computer Interaction*, 15(2), 205–208.
+- MIRAGE: Enabling Real-Time Automotive Mediated Reality. *CHI 2026*. doi:10.1145/3772318.3791195
+- Schwind, V., Resch, S., & Sehrt, J. (2023). The HCI User Studies Toolkit. *CHI EA '23*. doi:10.1145/3544549.3585890
+- Wang, C.-Y., Yeh, I.-H., & Liao, H.-Y. M. (2024). YOLOv9: Learning what you want to learn using programmable gradient information. *ECCV 2024*.
+- Meta Platforms Technologies. Unity-PassthroughCameraApiSamples (GitHub repository).
 
 ## Reproduce the analysis
 
